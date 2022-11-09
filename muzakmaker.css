@@ -7,19 +7,9 @@ body {
     min-width: 375px;
 }
 
-footer {
-    width: 100%;
-    background-color: #FFFFFF;
-    color: #590242;
-    font-family: raleway, sans-serif;
-    font-weight: 700;
-    font-size: 10pt;
-    color: #590242;
-    text-align: center;
-}
-
 header {
     background: linear-gradient(0.25turn, #2104D9, #020659, #000000);
+    margin: 0;
 }
 
 header p, li {
@@ -29,24 +19,30 @@ header p, li {
     color: #FFFFFF;
 }
 
-nav {
+.navBar {
     background-color: #030A8C;
+    height: fit-content;
+    position: fixed;
+    width: 100%;
 }
 
-ul {
+.navMenu {
     overflow: hidden;
     max-height: 0;
     transition: max-height .2s ease-out;
+    display: flex;
+    flex-direction: column;
 }
 
-nav li {
+.navMenu li {
     text-transform: uppercase;
-    display: inline-flex;
-    justify-content: space-around;
+    list-style: none;
 }
 
-ul h2 {
+#logo {
     font-variant: small-caps;
+    font-weight: 700;
+    display: block;
 }
 
 main {
@@ -201,6 +197,17 @@ input:checked ~ label span:after {
 }
 input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
     top: 0;
+}
+
+footer {
+    width: 100%;
+    background-color: #FFFFFF;
+    color: #590242;
+    font-family: raleway, sans-serif;
+    font-weight: 700;
+    font-size: 10pt;
+    color: #590242;
+    text-align: center;
 }
 
 @media screen and (min-width:834px) {
