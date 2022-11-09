@@ -28,43 +28,54 @@ header p, li {
     color: #FFFFFF;
 }
 
-.navMenu {
-    margin: 0px;
-    padding: 0px;
-    overflow: hidden;
-    max-height: 0;
-    transition: max-height .2s ease-out;
-    text-align: center;
-    background-color: #030A8C;
+#navBar {
+    background-color: #020873;
     position: fixed;
-    top: 0px;
+    width: 100%;
+    z-index: 1;
 }
 
-.navMenu li a {
-    text-transform: uppercase;
-    text-decoration: none;
-    display: block;
-    padding: 20px 20px;
-}
-
-.navMenu li a:hover{
-    background-color: #590242;
+#navBar ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: #020873;
 }
 
 #logo {
     font-variant: small-caps;
     font-weight: 700;
     display: block;
+    float: left;
 }
 
-label {
+#navBar li a {
+    text-transform: uppercase;
+    text-decoration: none;
+    display: block;
+    padding: 20px 20px;
+    clear: both;
+}
+
+#navMenu {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+
+.navMenu li a:hover{
+    background-color: #590242;
+}
+
+#burger {
     cursor: pointer;
     display: inline-block;
     padding: 28px 20px;
     position: relative;
     user-select: none;
 }
-label span {
+#burger span {
     background-color: #ffffff;
     display: block;
     height: 2px;
@@ -72,7 +83,7 @@ label span {
     transition: background-color .2s ease-out;
     width: 18px;
 }
-label span:before, label span:after {
+#burger span:before, #burger span:after {
     background: #ffffff;
     content: '';
     display: block;
@@ -81,10 +92,10 @@ label span:before, label span:after {
     transition: all .2s ease-out;
     width: 100%;
 }
-label span:before {
+#burger span:before {
     top: 5px;
 }
-label span:after {
+#burger span:after {
     top: -5px;
 }
 input {
@@ -93,16 +104,16 @@ input {
 input:checked ~ .navMenu {
     max-height: 500px;
 }
-input:checked ~ label span {
+input:checked ~ #burger span {
     background: transparent;
 }
-input:checked ~ label span:before {
+input:checked ~ #burger span:before {
     transform: rotate(-45deg);
 }
-input:checked ~ label span:after {
+input:checked ~ #burger span:after {
     transform: rotate(45deg);
 }
-input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
+input:checked ~ #burger:not(.steps) span:before, input:checked ~ #burger:not(.steps) span:after {
     top: 0;
 }
 
@@ -116,7 +127,7 @@ h2 {
     font-weight: 700;
     font-size: 20pt;
     color: #590242;
-    margin-left: 25px;
+    margin-left: 50px;
     text-transform: uppercase;
  }
 
@@ -130,7 +141,7 @@ h2 {
 }
 
 .songTitle {
-    position: absolute;
+    position: relative;
     bottom: 0px;
     background-color: rgba(255,255,255,.25);
 }
@@ -156,7 +167,7 @@ dd {
 }
 
 audio {
-    position: absolute;
+    position: relative;
     top: 100px;
 }
 
@@ -182,7 +193,7 @@ audio::-webkit-media-controls-enclosure {
 }
 
 #trending ::-webkit-scrollbar {
-
+    display: block;
 }
 #trending ::-webkit-scrollbar-track {
     background-color: #590242;
@@ -211,7 +222,7 @@ background-color: #020659;
 
 #playlists img, #curated img {
     border-radius: 5px;
-    margin-bottom: 5px;
+    margin: auto;
 }
 
 #playlists .container, #curated .container {
@@ -231,7 +242,7 @@ background-color: #020659;
     font-size: 16pt;
     color: #FFFFFF;
     text-transform: uppercase;
-    margin-bottom: 5px;
+    margin: 5px;
 }
 
 #playlists p, #curated p {
@@ -239,7 +250,7 @@ background-color: #020659;
     font-weight: 400;
     font-size: 14pt;
     color: #FFFFFF;
-    margin-bottom: 5px;
+    margin: 5px;
 }
 
 .more {
@@ -252,14 +263,12 @@ background-color: #020659;
     font-weight: 700;
     font-size: 14pt;
     text-align: center;
-    padding: 5px 20px;
-    margin-left: 25px;
+    margin-left: 50px;
     width: 200px;
-    height: 25px;
+    height: 40px;
 }
 
 footer {
-    width: 100%;
     background-color: #FFFFFF;
     color: #590242;
     font-family: raleway, sans-serif;
@@ -272,14 +281,14 @@ footer {
 }
 
 @media screen and (min-width:834px) {
-    navMenu {
+    .navMenu {
         overflow: visible;
         position: absolute;
         top: 0;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     }
-    label span, input {
+    #burger span, input {
         display: none;
     }
 }
