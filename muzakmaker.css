@@ -3,8 +3,8 @@ html {
 }
 
 body {
-    min-width: 375px;
     margin: 0 auto;
+    min-width: 375px;
 }
 
 footer {
@@ -18,10 +18,10 @@ footer {
 }
 
 header {
-    background-color: linear-gradient(0.25turn, #2104D9, #020659, #000000);
+    background: linear-gradient(0.25turn, #2104D9, #020659, #000000);
 }
 
-header p {
+header p, li {
     font-family: raleway, sans-serif;
     font-weight: 400;
     font-size: 20pt;
@@ -36,6 +36,14 @@ ul {
     overflow: hidden;
     max-height: 0;
     transition: max-height .2s ease-out;
+}
+
+li {
+    text-transform: uppercase;
+}
+
+ul h2 {
+    font-variant: small-caps;
 }
 
 main {
@@ -64,12 +72,14 @@ dd {
 }
 
 dt {
-    font-family: Raleway Extralight;
+    font-family: raleway, sans-serif;
+    font-weight: 200;
     font-size: 16pt;
     color: #590242;
 }
 
 #trending, #playlists, #curated {
+    display: flex;
     overflow: scroll;
 }
 
@@ -109,14 +119,21 @@ dt {
     background-color: #020873;
 }
 
+#playlists img, #curated img {
+    border-radius: 5px;
+}
+
 .more {
     background-color: #590242;
     color: #FFFFFF;
-    border-radius: 10px;
+    border-radius: 5px;
+    border: none;
     text-align: center;
     font-family: raleway, sans-serif;
     font-weight: 700;
     font-size: 14pt;
+    text-align: center;
+    padding: 5px 20px;
 }
 
 label {
