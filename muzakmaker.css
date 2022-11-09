@@ -10,6 +10,15 @@ body {
 header {
     background: linear-gradient(0.25turn, #2104D9, #020659, #000000);
     margin: 0;
+    margin-top: 75px;
+    padding-left: 25px;
+}
+
+h1 {
+    font-family: raleway, sans-serif;
+    font-weight: 700;
+    font-size: 20pt;
+    color: #FFFFFF;
 }
 
 header p, li {
@@ -23,9 +32,8 @@ header p, li {
     background-color: #030A8C;
     position: fixed;
     width: 100%;
-    position: sticky;
-    height: 50px;
-    text-align: center;
+    top: 0px;
+    height: 75px;
 }
 
 .navMenu {
@@ -34,6 +42,7 @@ header p, li {
     overflow: hidden;
     max-height: 0;
     transition: max-height .2s ease-out;
+    text-align: center;
 }
 
 .navMenu li a {
@@ -104,13 +113,7 @@ input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps)
 
 main {
     background-color: #FFFFFF;
-}
-
-h1 {
-    font-family: raleway, sans-serif;
-    font-weight: 700;
-    font-size: 20pt;
-    color: #FFFFFF;
+    margin: 0px;
 }
 
 h2 {
@@ -118,7 +121,25 @@ h2 {
     font-weight: 700;
     font-size: 20pt;
     color: #590242;
+    margin-left: 25px;
+    text-transform: uppercase;
  }
+
+ #trending, #playlists, #curated {
+    display: flex;
+    overflow: scroll;
+}
+
+#trending section {
+    margin: 10px;
+}
+
+.songTitle {
+    position: absolute;
+    bottom: 0px;
+    background-color: #FFFFFF;
+    opacity: .5;
+}
 
 dt, dd {
     font-family: raleway, sans-serif;
@@ -140,9 +161,19 @@ dd {
     clear: both;
 }
 
-#trending, #playlists, #curated {
-    display: flex;
-    overflow: scroll;
+audio {
+    position: absolute;
+    top: 100px;
+}
+
+audio::-webkit-media-controls-mute-button {
+    background-color: #FFFFFF;
+}
+audio::-webkit-media-controls-play-button {
+    background-color: #FFFFFF;
+}
+audio::-webkit-media-controls-enclosure {
+    opacity: .5;
 }
 
 #trending h3 {
@@ -150,7 +181,21 @@ dd {
     font-weight: 700;
     font-size: 16pt;
     color: #590242;
-    text-transform: capitalize;
+    text-transform: uppercase;
+    margin: 10px;
+}
+
+#trending ::-webkit-scrollbar {
+
+}
+#trending ::-webkit-scrollbar-track {
+
+}
+#trending ::-webkit-scrollbar-thumb {
+
+}
+#trending ::-webkit-scrollbar-thumb:hover {
+
 }
 
 #playlists {
@@ -210,6 +255,7 @@ dd {
     padding-top: 5px 20px;
     margin-left: 25px;
     width: 200px;
+    height: 50px;
 }
 
 footer {
