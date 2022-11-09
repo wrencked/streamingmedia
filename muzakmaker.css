@@ -4,12 +4,12 @@ html {
 
 body {
     margin: 0 auto;
-    min-width: 375px;
+    width: 375px;
 }
 
 header {
     background: linear-gradient(0.25turn, #2104D9, #020659, #000000);
-    margin: 0;
+    margin: 0px;
     margin-top: 75px;
     padding-left: 25px;
 }
@@ -28,21 +28,16 @@ header p, li {
     color: #FFFFFF;
 }
 
-.navBar {
-    background-color: #030A8C;
-    position: fixed;
-    width: 100%;
-    top: 0px;
-    height: 75px;
-}
-
 .navMenu {
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     overflow: hidden;
     max-height: 0;
     transition: max-height .2s ease-out;
     text-align: center;
+    background-color: #030A8C;
+    position: fixed;
+    top: 0px;
 }
 
 .navMenu li a {
@@ -127,18 +122,17 @@ h2 {
 
  #trending, #playlists, #curated {
     display: flex;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
-#trending section {
+#trending .container {
     margin: 10px;
 }
 
 .songTitle {
     position: absolute;
     bottom: 0px;
-    background-color: #FFFFFF;
-    opacity: .5;
+    background-color: rgba(255,255,255,.25);
 }
 
 dt, dd {
@@ -157,7 +151,7 @@ dd {
     font-weight: 400;
 }
 
-#trending section img {
+#trending .container img {
     clear: both;
 }
 
@@ -168,12 +162,14 @@ audio {
 
 audio::-webkit-media-controls-mute-button {
     background-color: #FFFFFF;
+    border-radius: 50%;
 }
 audio::-webkit-media-controls-play-button {
     background-color: #FFFFFF;
+    border-radius: 50%;
 }
 audio::-webkit-media-controls-enclosure {
-    opacity: .5;
+    background-color: rgba(255,255,255,.5);
 }
 
 #trending h3 {
@@ -189,27 +185,27 @@ audio::-webkit-media-controls-enclosure {
 
 }
 #trending ::-webkit-scrollbar-track {
-
+    background-color: #590242;
 }
 #trending ::-webkit-scrollbar-thumb {
-
+    background-color: #590242;
 }
 #trending ::-webkit-scrollbar-thumb:hover {
-
+background-color: #020659;
 }
 
 #playlists {
     background-color: #2699FB;
 }
 
-#playlists section {
+#playlists .container {
     background-color: #0D8DFB;
 }
 
 #curated {
     background-color: #030A8C;
 }
-#curated section {
+#curated .container {
     background-color: #020873;
 }
 
@@ -218,11 +214,15 @@ audio::-webkit-media-controls-enclosure {
     margin-bottom: 5px;
 }
 
-#playlists section, #curated section {
+#playlists .container, #curated .container {
     text-align: center;
     justify-content: space-around;
     margin: 10px;
     padding: 10px;
+}
+
+#playlists .container:hover, #curated .container:hover {
+    background-color: #590242;
 }
 
 #playlists h3, #curated h3 {
@@ -252,10 +252,10 @@ audio::-webkit-media-controls-enclosure {
     font-weight: 700;
     font-size: 14pt;
     text-align: center;
-    padding-top: 5px 20px;
+    padding: 5px 20px;
     margin-left: 25px;
     width: 200px;
-    height: 50px;
+    height: 25px;
 }
 
 footer {
@@ -267,7 +267,7 @@ footer {
     font-size: 10pt;
     color: #590242;
     text-align: center;
-    margin: 0;
+    margin: 0px;
     padding: 20px;
 }
 
