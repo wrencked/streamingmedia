@@ -1,0 +1,182 @@
+html {
+    background-color: #020659;
+}
+
+body {
+    min-width: 375px;
+    margin: 0 auto;
+}
+
+footer {
+    width: 100%;
+    background-color: #FFFFFF;
+    color: #590242;
+    font-family: raleway, sans-serif;
+    font-weight: 700;
+    font-size: 10pt;
+    color: #590242;
+}
+
+header {
+    background-color: linear-gradient(0.25turn, #2104D9, #020659, #000000);
+}
+
+header p {
+    font-family: raleway, sans-serif;
+    font-weight: 400;
+    font-size: 20pt;
+    color: #FFFFFF;
+}
+
+nav {
+    background-color: #030A8C;
+}
+
+ul {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+
+main {
+    background-color: #FFFFFF;
+}
+
+h1 {
+    font-family: raleway, sans-serif;
+    font-weight: 700;
+    font-size: 20pt;
+    color: #FFFFFF;
+}
+
+h2 {
+    font-family: raleway, sans-serif;
+    font-weight: 700;
+    font-size: 20pt;
+    color: #590242;
+ }
+
+dd {
+    font-family: raleway, sans-serif;
+    font-weight: 400;
+    font-size: 16pt;
+    color: #590242;
+}
+
+dt {
+    font-family: Raleway Extralight;
+    font-size: 16pt;
+    color: #590242;
+}
+
+#trending, #playlists, #curated {
+    overflow: scroll;
+}
+
+#playlists h3, #curated h3 {
+    font-family: raleway, sans-serif;
+    font-weight: 700;
+    font-size: 16pt;
+    color: #FFFFFF;
+}
+
+#playlists p, #curated p {
+    font-family: raleway, sans-serif;
+    font-weight: 400;
+    font-size: 14pt;
+    color: #FFFFFF;
+}
+
+#trending h3 {
+    font-family: raleway, sans-serif;
+    font-weight: 700;
+    font-size: 16pt;
+    color: #590242;
+}
+
+#playlists {
+    background-color: #2699FB;
+}
+
+#playlists section {
+    background-color: #0D8DFB;
+}
+
+#curated {
+    background-color: #030A8C;
+}
+#curated section {
+    background-color: #020873;
+}
+
+.more {
+    background-color: #590242;
+    color: #FFFFFF;
+    border-radius: 10px;
+    text-align: center;
+    font-family: raleway, sans-serif;
+    font-weight: 700;
+    font-size: 14pt;
+}
+
+label {
+    cursor: pointer;
+    display: inline-block;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+}
+label span {
+    background-color: #ffffff;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background-color .2s ease-out;
+    width: 18px;
+}
+label span:before, label span:after {
+    background: #ffffff;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+label span:before {
+    top: 5px;
+}
+label span:after {
+    top: -5px;
+}
+input {
+    display: none;
+}
+input:checked ~ ul {
+    max-height: 500px;
+}
+input:checked ~ label span {
+    background: transparent;
+}
+input:checked ~ label span:before {
+    transform: rotate(-45deg);
+}
+input:checked ~ label span:after {
+    transform: rotate(45deg);
+}
+input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
+    top: 0;
+}
+
+@media screen and (min-width:834px) {
+    ul {
+        overflow: visible;
+        position: absolute;
+        top: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+    label span, input {
+        display: none;
+    }
+}
