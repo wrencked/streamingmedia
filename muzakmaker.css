@@ -23,7 +23,7 @@ header p, li {
     background-color: #030A8C;
     position: fixed;
     width: 100%;
-    position: fixed;
+    position: sticky;
     height: 50px;
     text-align: center;
 }
@@ -50,7 +50,56 @@ header p, li {
 #logo {
     font-variant: small-caps;
     font-weight: 700;
-    display:block;
+    display: block;
+}
+
+label {
+    cursor: pointer;
+    display: inline-block;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+}
+label span {
+    background-color: #ffffff;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background-color .2s ease-out;
+    width: 18px;
+}
+label span:before, label span:after {
+    background: #ffffff;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+label span:before {
+    top: 5px;
+}
+label span:after {
+    top: -5px;
+}
+input {
+    display: none;
+}
+input:checked ~ .navMenu {
+    max-height: 500px;
+}
+input:checked ~ label span {
+    background: transparent;
+}
+input:checked ~ label span:before {
+    transform: rotate(-45deg);
+}
+input:checked ~ label span:after {
+    transform: rotate(45deg);
+}
+input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
+    top: 0;
 }
 
 main {
@@ -121,13 +170,14 @@ dd {
 
 #playlists img, #curated img {
     border-radius: 5px;
+    margin-bottom: 5px;
 }
 
 #playlists section, #curated section {
     text-align: center;
     justify-content: space-around;
     margin: 10px;
-    padding: 5px;
+    padding: 10px;
 }
 
 #playlists h3, #curated h3 {
@@ -135,7 +185,8 @@ dd {
     font-weight: 700;
     font-size: 16pt;
     color: #FFFFFF;
-    text-transform: capitalize;
+    text-transform: uppercase;
+    margin-bottom: 5px;
 }
 
 #playlists p, #curated p {
@@ -143,6 +194,7 @@ dd {
     font-weight: 400;
     font-size: 14pt;
     color: #FFFFFF;
+    margin-bottom: 5px;
 }
 
 .more {
@@ -155,56 +207,9 @@ dd {
     font-weight: 700;
     font-size: 14pt;
     text-align: center;
-    padding: 5px 20px;
-}
-
-label {
-    cursor: pointer;
-    display: inline-block;
-    padding: 28px 20px;
-    position: relative;
-    user-select: none;
-}
-label span {
-    background-color: #ffffff;
-    display: block;
-    height: 2px;
-    position: relative;
-    transition: background-color .2s ease-out;
-    width: 18px;
-}
-label span:before, label span:after {
-    background: #ffffff;
-    content: '';
-    display: block;
-    height: 100%;
-    position: absolute;
-    transition: all .2s ease-out;
-    width: 100%;
-}
-label span:before {
-    top: 5px;
-}
-label span:after {
-    top: -5px;
-}
-input {
-    display: none;
-}
-input:checked ~ .navMenu {
-    max-height: 500px;
-}
-input:checked ~ label span {
-    background: transparent;
-}
-input:checked ~ label span:before {
-    transform: rotate(-45deg);
-}
-input:checked ~ label span:after {
-    transform: rotate(45deg);
-}
-input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
-    top: 0;
+    padding-top: 5px 20px;
+    margin-left: 25px;
+    width: 200px;
 }
 
 footer {
@@ -216,6 +221,8 @@ footer {
     font-size: 10pt;
     color: #590242;
     text-align: center;
+    margin: 0;
+    padding: 20px;
 }
 
 @media screen and (min-width:834px) {
