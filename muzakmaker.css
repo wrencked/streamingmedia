@@ -21,28 +21,36 @@ header p, li {
 
 .navBar {
     background-color: #030A8C;
-    height: fit-content;
     position: fixed;
     width: 100%;
+    position: fixed;
+    height: 50px;
+    text-align: center;
 }
 
 .navMenu {
+    margin: 0;
+    padding: 0;
     overflow: hidden;
     max-height: 0;
     transition: max-height .2s ease-out;
-    display: flex;
-    flex-direction: column;
 }
 
-.navMenu li {
+.navMenu li a {
     text-transform: uppercase;
-    list-style: none;
+    text-decoration: none;
+    display: block;
+    padding: 20px 20px;
+}
+
+.navMenu li a:hover{
+    background-color: #590242;
 }
 
 #logo {
     font-variant: small-caps;
     font-weight: 700;
-    display: block;
+    display:block;
 }
 
 main {
@@ -183,7 +191,7 @@ label span:after {
 input {
     display: none;
 }
-input:checked ~ ul {
+input:checked ~ .navMenu {
     max-height: 500px;
 }
 input:checked ~ label span {
@@ -211,7 +219,7 @@ footer {
 }
 
 @media screen and (min-width:834px) {
-    ul {
+    navMenu {
         overflow: visible;
         position: absolute;
         top: 0;
