@@ -10,8 +10,6 @@ body {
 header {
     background: linear-gradient(0.25turn, #2104D9, #020659, #000000);
     margin: 0px;
-    margin-top: 75px;
-    padding-left: 25px;
 }
 
 h1 {
@@ -19,6 +17,10 @@ h1 {
     font-weight: 700;
     font-size: 20pt;
     color: #FFFFFF;
+}
+
+header h1, header p {
+    padding: 5px 25px;
 }
 
 header p, li {
@@ -31,8 +33,9 @@ header p, li {
 #navBar {
     background-color: #020873;
     position: fixed;
-    width: 100%;
     z-index: 1;
+    top: 0px;
+    width: 375px;
 }
 
 #navBar ul {
@@ -46,8 +49,7 @@ header p, li {
 #logo {
     font-variant: small-caps;
     font-weight: 700;
-    display: block;
-    float: left;
+    display: inline-block;
 }
 
 #navBar li a {
@@ -55,7 +57,6 @@ header p, li {
     text-decoration: none;
     display: block;
     padding: 20px 20px;
-    clear: both;
 }
 
 #navMenu {
@@ -64,7 +65,7 @@ header p, li {
     transition: max-height .2s ease-out;
 }
 
-.navMenu li a:hover{
+#navMenu li a:hover{
     background-color: #590242;
 }
 
@@ -101,7 +102,7 @@ header p, li {
 input {
     display: none;
 }
-input:checked ~ .navMenu {
+input:checked ~ #navMenu {
     max-height: 500px;
 }
 input:checked ~ #burger span {
@@ -133,16 +134,14 @@ h2 {
 
  #trending, #playlists, #curated {
     display: flex;
-    overflow-y: scroll;
+    overflow: scroll;
 }
 
-#trending .container {
+#trending figure {
     margin: 10px;
 }
 
-.songTitle {
-    position: relative;
-    bottom: 0px;
+#trending figcaption {
     background-color: rgba(255,255,255,.25);
 }
 
@@ -162,7 +161,7 @@ dd {
     font-weight: 400;
 }
 
-#trending .container img {
+#trending figure img {
     clear: both;
 }
 
@@ -209,14 +208,14 @@ background-color: #020659;
     background-color: #2699FB;
 }
 
-#playlists .container {
+#playlists figure {
     background-color: #0D8DFB;
 }
 
 #curated {
     background-color: #030A8C;
 }
-#curated .container {
+#curated figure {
     background-color: #020873;
 }
 
@@ -225,14 +224,14 @@ background-color: #020659;
     margin: auto;
 }
 
-#playlists .container, #curated .container {
+#playlists figure, #curated figure {
     text-align: center;
     justify-content: space-around;
     margin: 10px;
     padding: 10px;
 }
 
-#playlists .container:hover, #curated .container:hover {
+#playlists figure:hover, #curated figure:hover {
     background-color: #590242;
 }
 
@@ -281,7 +280,7 @@ footer {
 }
 
 @media screen and (min-width:834px) {
-    .navMenu {
+    #navMenu {
         overflow: visible;
         position: absolute;
         top: 0;
