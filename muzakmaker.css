@@ -163,17 +163,32 @@ h2 {
 
  #trending, #playlists, #curated {
     display: flex;
-    overflow: scroll;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+#trending h3 {
+    font-family: raleway, sans-serif;
+    font-weight: 700;
+    font-size: 16pt;
+    color: #590242;
+    text-transform: uppercase;
+    margin: 10px;
 }
 
 #trending figure {
     margin: 10px;
+    height: 311px;
 }
 
 #trending figcaption {
     background-color: rgba(255,255,255,.25);
     position: relative;
-    top: -200px;
+    top: 200px;
+}
+
+dl {
+    background-color: rgba(255,255,255,.25);
 }
 
 dt, dd {
@@ -194,11 +209,13 @@ dd {
 
 #trending figure img {
     clear: both;
+    top: -76px;
+    position: relative;
 }
 
 audio {
     position: relative;
-    top: 200px;
+    top: -250px;
 }
 
 audio::-webkit-media-controls-mute-button {
@@ -213,23 +230,17 @@ audio::-webkit-media-controls-enclosure {
     background-color: rgba(255,255,255,.5);
 }
 
-#trending h3 {
-    font-family: raleway, sans-serif;
-    font-weight: 700;
-    font-size: 16pt;
-    color: #590242;
-    text-transform: uppercase;
-    margin: 10px;
-}
-
 #trending::-webkit-scrollbar {
-    display: block;
+    width: 100px;
 }
 #trending::-webkit-scrollbar-track {
-    background-color: rgba(255,255,255,.25);
+    background-color: #590242;
+    border-radius: 10px;
+    opacity: .5;
 }
 #trending::-webkit-scrollbar-thumb {
     background-color: #590242;
+    border-radius: 10px;
 }
 #trending::-webkit-scrollbar-thumb:hover {
     background-color: #020659;
@@ -283,16 +294,16 @@ audio::-webkit-media-controls-enclosure {
     margin: 5px;
 }
 
-#playlists ::-webkit-scrollbar, #curated ::-webkit-scrollbar {
+#playlists::-webkit-scrollbar, #curated::-webkit-scrollbar {
     display: block;
 }
-#playlists ::-webkit-scrollbar-track, #curated ::-webkit-scrollbar-track  {
+#playlists::-webkit-scrollbar-track, #curated::-webkit-scrollbar-track  {
     background-color: rgba(255,255,255,.25);
 }
-#playlists ::-webkit-scrollbar-thumb, #curated ::-webkit-scrollbar-thumb {
+#playlists::-webkit-scrollbar-thumb, #curated::-webkit-scrollbar-thumb {
     background-color: #020659;
 }
-#playlists ::-webkit-scrollbar-thumb:hover, #curated ::-webkit-scrollbar-thumb:hover {
+#playlists::-webkit-scrollbar-thumb:hover, #curated::-webkit-scrollbar-thumb:hover {
     background-color: #FFFFFF;
 }
 
