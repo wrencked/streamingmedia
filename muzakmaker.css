@@ -11,7 +11,7 @@ header {
     background: linear-gradient(0.25turn, #2104D9, #020659, #000000);
     margin: 0px;
     display: grid;
-    grid-template-rows: 60px 60px 1fr;
+    grid-template-rows: 60px 40px 1fr;
 }
 
 header h1 {
@@ -22,10 +22,11 @@ header h1 {
     margin-bottom: 0px;
     grid-row-start: 2;
     grid-row-end: 3;
+    margin-top: 0;
 }
 
 header p {
-    margin-top: 10px;
+    margin-top: 0px;
     margin-bottom: 10px;
     grid-row-start: 3;
     grid-row-end: 4;
@@ -46,13 +47,12 @@ nav {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
-    position: fixed;
+    position: absolute;
     top: 0px;
     width: 375px;
-    background-color: #020873;
 }
 
-#navIcon {
+#burger, input {
     grid-column-start: 1;
     grid-column-end: 2;
     z-index: 2;
@@ -123,6 +123,7 @@ nav li {
     padding-top: 15px;
     padding-bottom: 15px;
     margin: auto;
+    list-style: none;
 }
 
 nav li a {
@@ -136,6 +137,11 @@ nav li a {
     font-variant: small-caps;
     font-weight: 700;
     font-size: 20pt;
+    width:200px;
+}
+
+#logo ~ li {
+    background-color: #2104D9;
 }
 
 #navMenu {
@@ -144,7 +150,7 @@ nav li a {
     transition: max-height .2s ease-out;
     margin: 0px;
     padding: 0px;
-    background-color: #020873;
+    background-color: #030A8C;
     grid-column-start: 1;
     grid-column-end: 6;
     position: absolute;
@@ -155,7 +161,7 @@ nav li a {
     background-color: #590242;
 }
 
-#logo a:hover {
+#logo li:hover {
     background-color: #590242;
 }
 
@@ -232,6 +238,7 @@ dd {
 audio {
     position: relative;
     top: -260px;
+    margin: auto;
 }
 
 audio::-webkit-media-controls-mute-button {
@@ -375,29 +382,26 @@ footer {
         top: 0;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        list-style: none;
-        gap: 50px;
-        justify-content: center;
+        width: 834px;
     }
 
     nav li {
         text-align: center;
         padding: 5px;
-        margin: 0px;
+        margin: auto;
         width: fit-content;
     }
 
-    nav li:last-child {
-        padding-top: 10px;
-    }
-
-    #logo {
-        padding-top: 15px;
-        padding-left: 10px;
+    #logo ~ li {
+        background-color: #030A8C;
     }
 
     #burger span, input {
         display: none;
+    }
+
+    #burger {
+        z-index: 0;
     }
 
     #playlists {
